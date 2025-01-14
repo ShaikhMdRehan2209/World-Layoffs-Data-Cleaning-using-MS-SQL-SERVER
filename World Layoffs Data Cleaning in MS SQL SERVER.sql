@@ -121,3 +121,11 @@ WHERE total_laid_off = 'NULL' AND percentage_laid_off = 'NULL';
 
 SELECT *
 FROM PortfolioProject.dbo.layoffs_staging;
+
+-- Copy all rows from layoffs_staging to layoffs
+INSERT INTO PortfolioProject.dbo.layoffs
+SELECT * 
+FROM PortfolioProject.dbo.layoffs_staging;
+
+SELECT *
+FROM PortfolioProject.dbo.layoffs;
